@@ -1,0 +1,16 @@
+/* =============================================
+   CINEFLIX — Base & Reset
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  { background: var(--c-bg); color: var(--c-text); font-family: var(--f-body); font-size: .9375rem; line-height: 1.5; min-height: 100vh; overflow-x: hidden; }
+img   { display: block; max-width: 100%; }
+a     { color: inherit; text-decoration: none; }
+button{ cursor: pointer; font-family: inherit; }
+ul,ol { list-style: none; }
+
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-crimson); border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--c-crimson); outline-offset: 2px; }
+::selection    { background: var(--c-crimson); color: var(--c-white); }

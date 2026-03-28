@@ -1,0 +1,40 @@
+/* =============================================
+   CINEFLIX — Cards & Rows
+   ============================================= */
+
+/* Skeleton */
+.cf-skeleton { flex-shrink: 0; width: 150px; aspect-ratio: 2/3; background: linear-gradient(90deg, var(--c-surface) 25%, var(--c-surface-2) 50%, var(--c-surface) 75%); background-size: 200% 100%; animation: cfShimmer 1.4s infinite; border-radius: var(--r-sm); }
+.cf-skeleton-wide { width: 200px; aspect-ratio: 16/9; }
+@keyframes cfShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* Row wrap */
+.cf-row-wrap { margin-bottom: 2.5rem; }
+.cf-row-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1rem; padding: 0 2rem; }
+.cf-row-title { font-family: var(--f-display); font-size: 1.5rem; letter-spacing: .06em; color: var(--c-white); display: flex; align-items: center; gap: .5rem; }
+.cf-row-title::before { content: ''; display: inline-block; width: 3px; height: 1.1em; background: var(--c-crimson); border-radius: 1px; flex-shrink: 0; }
+.cf-section { padding-top: 2rem; }
+
+.cf-row { display: flex; gap: .75rem; overflow-x: auto; overflow-y: visible; padding: .25rem 2rem .75rem; scrollbar-width: none; }
+.cf-row::-webkit-scrollbar { display: none; }
+
+/* Card estándar */
+.cf-card { flex-shrink: 0; width: 150px; position: relative; cursor: pointer; border-radius: var(--r-sm); overflow: hidden; background: var(--c-surface); transition: transform var(--t-base); }
+.cf-card:hover { transform: translateY(-4px); }
+.cf-card-poster { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; background: var(--c-surface-2); }
+.cf-card-badge { position: absolute; top: .4rem; right: .4rem; background: rgba(155,17,30,.92); color: var(--c-white); font-family: var(--f-ui); font-size: .7rem; font-weight: 700; padding: .1rem .4rem; border-radius: 1px; }
+.cf-card-info { padding: .5rem .55rem .6rem; }
+.cf-card-name { font-family: var(--f-ui); font-size: .82rem; font-weight: 600; color: var(--c-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cf-card-sub  { font-family: var(--f-ui); font-size: .72rem; color: var(--c-text-muted); margin-top: .15rem; }
+.cf-card-play { position: absolute; inset: 0; background: rgba(10,10,10,.6); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity var(--t-base); }
+.cf-card:hover .cf-card-play { opacity: 1; }
+.cf-card-play i { font-size: 2.2rem; color: var(--c-white); filter: drop-shadow(0 2px 8px rgba(0,0,0,.8)); }
+
+/* Card Top-10 */
+.cf-card-top { flex-shrink: 0; width: 200px; cursor: pointer; position: relative; }
+.cf-card-top-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border-radius: var(--r-sm); background: var(--c-surface-2); transition: filter var(--t-base); }
+.cf-card-top:hover .cf-card-top-img { filter: brightness(1.1); }
+.cf-card-top-num { font-family: var(--f-display); font-size: 4.5rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--c-border-2); position: absolute; bottom: 1.5rem; left: -.5rem; transition: -webkit-text-stroke-color var(--t-base); pointer-events: none; }
+.cf-card-top:hover .cf-card-top-num { -webkit-text-stroke-color: var(--c-crimson); }
+.cf-card-top-info { padding: 1.4rem .25rem .3rem; }
+.cf-card-top-name { font-family: var(--f-ui); font-size: .82rem; font-weight: 600; color: var(--c-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cf-card-top-sub  { font-size: .72rem; color: var(--c-text-muted); }

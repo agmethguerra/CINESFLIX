@@ -1,0 +1,31 @@
+/* =============================================
+   CINEFLIX — Design Tokens
+   ============================================= */
+:root {
+  --c-bg:         #0d0d0d;
+  --c-surface:    #141414;
+  --c-surface-2:  #1c1c1c;
+  --c-border:     #242424;
+  --c-border-2:   #2e2e2e;
+  --c-crimson:    #9b111e;
+  --c-crimson-h:  #c0182a;
+  --c-text:       #e8e4df;
+  --c-text-muted: #6b6560;
+  --c-text-soft:  #a09890;
+  --c-white:      #f5f2ee;
+
+  --f-display: 'Bebas Neue', sans-serif;
+  --f-ui:      'Barlow Condensed', sans-serif;
+  --f-body:    'Barlow', sans-serif;
+
+  --nav-h:     58px;
+  --sidebar-w: 300px;
+
+  --t-fast: .15s ease;
+  --t-base: .25s ease;
+  --r-sm:   2px;
+  --r-md:   4px;
+  --z-nav:  100;
+  --z-modal:200;
+  --z-toast:300;
+}

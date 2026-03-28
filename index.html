@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO BÁSICO -->
+  <title>CinesFlix — Películas y Series en Español Latino</title>
+  <meta name="description"
+    content="cinesflix: ve películas y series en español latino completamente gratis. Catálogo actualizado con las tendencias, estrenos y los títulos mejor valorados." />
+  <meta name="keywords"
+    content="películas online, series online, español latino, ver películas gratis, estrenos, catálogo películas, cinesflix" />
+  <meta name="author" content="cinesflix" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cinesflix.netlify.app/" />
+
+  <!-- OPEN GRAPH (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="CinesFlix" />
+  <meta property="og:title" content="CinesFlix — Películas y Series en Español Latino" />
+  <meta property="og:description"
+    content="Ve películas y series en español latino gratis. Catálogo actualizado con tendencias, estrenos y títulos mejor valorados." />
+  <meta property="og:url" content="https://cinesflix.netlify.app/" />
+  <meta property="og:image" content="https://cinesflix.netlify.app/og-image.jpg" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CinesFlix — Películas y Series en Español Latino" />
+  <meta name="twitter:description"
+    content="Ve películas y series en español latino gratis. Tendencias, estrenos y los mejor valorados." />
+  <meta name="twitter:image" content="https://cinesflix.netlify.app/og-image.jpg" />
+
+  <!-- SCHEMA.ORG (datos estructurados para Google)-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CinesFlix",
+    "url": "https://cinesflix.netlify.app/",
+    "description": "Plataforma de películas y series en español latino.",
+    "inLanguage": "es-MX",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://cinesflix.netlify.app/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.svg" />
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- JW Player -->
+  <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/cards.css" />
+  <link rel="stylesheet" href="assets/css/player.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="cf-nav" role="navigation" aria-label="Navegación principal">
+
+      <a href="#" class="cf-logo" id="navInicio" aria-label="CinesFlix — inicio">CINES<em>FLIX</em></a>
+
+      <ul class="cf-nav-links" role="menubar">
+        <li class="is-active" role="none">
+          <a href="#" id="navInicio2" role="menuitem">Inicio</a>
+        </li>
+        <li role="none">
+          <a href="#" id="navPeliculas" role="menuitem">Películas</a>
+        </li>
+        <li role="none">
+          <a href="#" id="navSeries" role="menuitem">Series</a>
+        </li>
+        <li class="cf-dropdown" role="none">
+          <button role="menuitem" aria-haspopup="true">
+            Categorías <i class="bi bi-chevron-down" style="font-size:.62rem"></i>
+          </button>
+          <div class="cf-dropdown-menu" id="catDropdownMenu" role="menu"></div>
+        </li>
+      </ul>
+
+      <div class="cf-search" role="search">
+        <input type="search" id="searchInput" placeholder="Buscar películas, series…" autocomplete="off"
+          aria-label="Buscar en CinesFlix" />
+        <i class="bi bi-search cf-search-icon" aria-hidden="true"></i>
+        <div class="cf-search-drop" id="searchDrop" role="listbox" aria-label="Resultados de búsqueda"></div>
+      </div>
+
+      <button class="cf-nav-toggle" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="heroSection" aria-label="Contenido destacado">
+    <div class="cf-hero">
+      <div class="cf-hero-bg" id="heroBg" role="img" aria-label="Imagen de fondo destacada"></div>
+      <div class="cf-hero-content">
+        <div class="cf-hero-tag" id="heroTag">⬤ Destacado</div>
+        <h1 class="cf-hero-title" id="heroTitulo">–</h1>
+        <div class="cf-hero-meta" id="heroMeta" aria-live="polite"></div>
+        <p class="cf-hero-desc" id="heroSinopsis"></p>
+        <div class="cf-hero-actions">
+          <button class="cf-btn cf-btn-primary" id="heroPlay">
+            <i class="bi bi-play-fill"></i> Reproducir
+          </button>
+        </div>
+      </div>
+      <div class="cf-hero-dots" id="heroDots" role="tablist" aria-label="Contenidos destacados"></div>
+    </div>
+  </section>
+
+  <!-- LAYOUT -->
+  <div class="cf-main-layout">
+
+    <main class="cf-content" id="mainContent" aria-label="Catálogo de películas y series"></main>
+
+    <aside class="cf-sidebar" aria-label="Panel lateral">
+      <div class="cf-sidebar-box">
+        <div class="cf-sidebar-title">🔥 Más Populares</div>
+        <div id="masVistosList"></div>
+      </div>
+      <div class="cf-sidebar-box">
+        <div class="cf-sidebar-title">Géneros</div>
+        <div class="cf-genre-grid" id="generoChips"></div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- MODAL REPRODUCTOR -->
+  <div class="cf-modal-overlay" id="playerOverlay" role="dialog" aria-modal="true" aria-labelledby="infoTitulo">
+    <div class="cf-modal" id="playerModal">
+
+      <button class="cf-modal-close" id="playerCerrar" aria-label="Cerrar reproductor">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="cf-jwplayer-wrap" id="cf-jwplayer-wrap">
+        <div class="cf-player-spinner" id="cfSpinner">
+          <div class="spin"></div>
+          <span>Cargando reproductor…</span>
+        </div>
+        <div class="cf-player-error" id="cfPlayerError">
+          <i class="bi bi-exclamation-circle"></i>
+          <p>Este servidor no respondió.<br>Prueba con otro servidor.</p>
+        </div>
+      </div>
+
+      <div class="cf-source-bar" id="sourceBar">
+        <span class="cf-source-label">Servidor:</span>
+      </div>
+
+      <div class="cf-modal-info">
+        <h2 class="cf-modal-title" id="infoTitulo"></h2>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap">
+          <span class="cf-modal-rating" id="infoNota"></span>
+          <div class="cf-modal-meta" id="infoMeta"></div>
+        </div>
+        <p class="cf-modal-desc" id="infoSinopsis"></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="cf-footer" role="contentinfo">
+    <div class="cf-footer-logo">CINES<em>FLIX</em></div>
+    <div class="cf-footer-tag">El Cine Sin Límites · Español Latino</div>
+    <div class="cf-footer-copy">
+      © 2026 CinesFlix · Datos provistos por
+      <a href="https://www.themoviedb.org" target="_blank" rel="noopener">TMDB</a>
+    </div>
+  </footer>
+
+  <div class="cf-toast" id="cfToast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>
