@@ -1,89 +1,418 @@
 /* =============================================
-   CINEFLIX — Navbar
+   CINESFLIX — Navbar
    ============================================= */
 .cf-nav {
-  position: sticky; top: 0; z-index: var(--z-nav);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
   height: var(--nav-h);
   background: var(--c-surface);
   border-bottom: 1px solid var(--c-border);
-  display: flex; align-items: center; gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
   padding: 0 2rem;
 }
-.cf-logo { font-family: var(--f-display); font-size: 1.85rem; letter-spacing: .06em; color: var(--c-white); flex-shrink: 0; }
-.cf-logo em { color: var(--c-crimson); font-style: normal; }
+.cf-logo {
+  font-family: var(--f-display);
+  font-size: 1.85rem;
+  letter-spacing: 0.06em;
+  color: var(--c-white);
+  flex-shrink: 0;
+}
+.cf-logo em {
+  color: var(--c-crimson);
+  font-style: normal;
+}
 
-.cf-nav-links { display: flex; align-items: center; gap: .125rem; height: 100%; }
-.cf-nav-links > li { position: relative; height: 100%; display: flex; align-items: center; }
+/* ── Links de escritorio ── */
+.cf-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  height: 100%;
+}
+.cf-nav-links > li {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 .cf-nav-links > li > a,
 .cf-nav-links > li > button {
-  font-family: var(--f-ui); font-size: .875rem; font-weight: 600;
-  letter-spacing: .07em; text-transform: uppercase;
-  color: var(--c-text-muted); background: none; border: none;
-  padding: 0 .75rem; height: 100%;
-  display: flex; align-items: center; gap: .3rem;
-  transition: color var(--t-fast); white-space: nowrap;
+  font-family: var(--f-ui);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  background: none;
+  border: none;
+  padding: 0 0.75rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: color var(--t-fast);
+  white-space: nowrap;
 }
 .cf-nav-links > li > a:hover,
-.cf-nav-links > li > button:hover { color: var(--c-white); }
+.cf-nav-links > li > button:hover {
+  color: var(--c-white);
+}
 .cf-nav-links > li.is-active::after {
-  content: ''; position: absolute; bottom: 0; left: .75rem; right: .75rem;
-  height: 2px; background: var(--c-crimson);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background: var(--c-crimson);
 }
 
-/* Dropdown */
+/* ── Dropdown escritorio ── */
 .cf-dropdown-menu {
-  position: absolute; top: calc(100% + 1px); left: 0;
-  min-width: 200px; background: var(--c-surface-2);
-  border: 1px solid var(--c-border-2); border-top: 2px solid var(--c-crimson);
-  opacity: 0; pointer-events: none;
-  transform: translateY(-6px); transition: opacity var(--t-base), transform var(--t-base);
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  min-width: 200px;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border-2);
+  border-top: 2px solid var(--c-crimson);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    opacity var(--t-base),
+    transform var(--t-base);
   z-index: 10;
 }
 .cf-nav-links > li:hover .cf-dropdown-menu,
-.cf-nav-links > li:focus-within .cf-dropdown-menu { opacity: 1; pointer-events: all; transform: translateY(0); }
+.cf-nav-links > li:focus-within .cf-dropdown-menu {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
 .cf-dropdown-menu a {
-  display: flex; align-items: center; gap: .5rem;
-  font-family: var(--f-ui); font-size: .82rem; font-weight: 600;
-  letter-spacing: .06em; text-transform: uppercase;
-  color: var(--c-text-soft); padding: .5rem 1rem;
-  transition: color var(--t-fast), background var(--t-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--f-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-text-soft);
+  padding: 0.5rem 1rem;
+  transition:
+    color var(--t-fast),
+    background var(--t-fast);
 }
-.cf-dropdown-menu a:hover { color: var(--c-white); background: var(--c-border); }
-.cf-dropdown-menu a i { color: var(--c-crimson); font-size: .8rem; }
-.cf-dropdown-divider { border: none; border-top: 1px solid var(--c-border); margin: .25rem 0; }
+.cf-dropdown-menu a:hover {
+  color: var(--c-white);
+  background: var(--c-border);
+}
+.cf-dropdown-menu a i {
+  color: var(--c-crimson);
+  font-size: 0.8rem;
+}
+.cf-dropdown-divider {
+  border: none;
+  border-top: 1px solid var(--c-border);
+  margin: 0.25rem 0;
+}
 
-/* Search */
-.cf-search { flex: 1; max-width: 420px; position: relative; margin-left: auto; }
+/* ── Buscador ── */
+.cf-search {
+  flex: 1;
+  max-width: 420px;
+  position: relative;
+  margin-left: auto;
+}
 .cf-search input {
-  width: 100%; background: var(--c-bg);
-  border: 1px solid var(--c-border); border-radius: var(--r-sm);
-  color: var(--c-text); font-family: var(--f-ui); font-size: .875rem;
-  letter-spacing: .04em; padding: .45rem 2.4rem .45rem .85rem;
-  transition: border-color var(--t-fast); outline: none;
+  width: 100%;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  color: var(--c-text);
+  font-family: var(--f-ui);
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 2.4rem 0.45rem 0.85rem;
+  transition: border-color var(--t-fast);
+  outline: none;
 }
-.cf-search input::placeholder { color: var(--c-text-muted); }
-.cf-search input:focus { border-color: var(--c-crimson); }
+.cf-search input::placeholder {
+  color: var(--c-text-muted);
+}
+.cf-search input:focus {
+  border-color: var(--c-crimson);
+}
 .cf-search-icon {
-  position: absolute; right: .7rem; top: 50%; transform: translateY(-50%);
-  color: var(--c-text-muted); font-size: .9rem; pointer-events: none; transition: color var(--t-fast);
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c-text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
 }
-.cf-search input:focus ~ .cf-search-icon { color: var(--c-crimson); }
+.cf-search input:focus ~ .cf-search-icon {
+  color: var(--c-crimson);
+}
 .cf-search-drop {
-  position: absolute; top: calc(100% + 6px); left: 0; right: 0;
-  background: var(--c-surface-2); border: 1px solid var(--c-border-2);
-  max-height: 340px; overflow-y: auto; display: none; z-index: var(--z-modal);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border-2);
+  max-height: 340px;
+  overflow-y: auto;
+  display: none;
+  z-index: var(--z-modal);
 }
-.cf-search-drop.is-open { display: block; }
+.cf-search-drop.is-open {
+  display: block;
+}
 .cf-search-hit {
-  display: flex; align-items: center; gap: .6rem;
-  padding: .5rem .85rem; cursor: pointer; transition: background var(--t-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+  transition: background var(--t-fast);
 }
-.cf-search-hit:hover { background: var(--c-border); }
-.cf-search-hit img { width: 34px; height: 50px; object-fit: cover; flex-shrink: 0; }
-.cf-search-hit-title { font-family: var(--f-ui); font-size: .85rem; font-weight: 600; color: var(--c-text); }
-.cf-search-hit-sub   { font-size: .75rem; color: var(--c-text-muted); margin-top: .1rem; }
+.cf-search-hit:hover {
+  background: var(--c-border);
+}
+.cf-search-hit img {
+  width: 34px;
+  height: 50px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.cf-search-hit-title {
+  font-family: var(--f-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--c-text);
+}
+.cf-search-hit-sub {
+  font-size: 0.75rem;
+  color: var(--c-text-muted);
+  margin-top: 0.1rem;
+}
 
-.cf-nav-toggle { display: none; background: none; border: none; color: var(--c-text); font-size: 1.3rem; }
+/* ── Botón hamburguesa (oculto en escritorio) ── */
+.cf-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--c-text);
+  font-size: 1.4rem;
+  padding: 0.25rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
 
-@media (max-width: 900px) { .cf-nav-links { display: none; } .cf-nav-toggle { display: flex; align-items: center; } .cf-search { max-width: 240px; } }
-@media (max-width: 540px) { .cf-nav { padding: 0 1rem; gap: .75rem; } .cf-search { max-width: 160px; } }
+/* ════════════════════════════════════════
+   MENÚ MÓVIL — panel lateral deslizable
+   ════════════════════════════════════════ */
+.cf-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100dvh;
+  background: var(--c-surface);
+  border-right: 1px solid var(--c-border);
+  z-index: calc(var(--z-nav) + 10);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.28s ease;
+  overflow-y: auto;
+}
+.cf-mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+/* Fondo oscuro detrás del menú */
+.cf-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: calc(var(--z-nav) + 9);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+.cf-mobile-backdrop.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Cabecera del menú móvil */
+.cf-mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--c-border);
+  flex-shrink: 0;
+}
+.cf-mobile-logo {
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--c-white);
+}
+.cf-mobile-logo em {
+  color: var(--c-crimson);
+  font-style: normal;
+}
+.cf-mobile-close {
+  background: none;
+  border: none;
+  color: var(--c-text-muted);
+  font-size: 1.3rem;
+  transition: color var(--t-fast);
+}
+.cf-mobile-close:hover {
+  color: var(--c-white);
+}
+
+/* Links del menú móvil */
+.cf-mobile-links {
+  padding: 0.75rem 0;
+  flex-shrink: 0;
+}
+.cf-mobile-links a,
+.cf-mobile-links button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: var(--f-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-text-soft);
+  padding: 0.75rem 1.25rem;
+  transition:
+    color var(--t-fast),
+    background var(--t-fast);
+  text-align: left;
+}
+.cf-mobile-links a:hover,
+.cf-mobile-links button:hover {
+  color: var(--c-white);
+  background: var(--c-surface-2);
+}
+.cf-mobile-links a i,
+.cf-mobile-links button i {
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+/* Separador */
+.cf-mobile-divider {
+  border: none;
+  border-top: 1px solid var(--c-border);
+  margin: 0.5rem 0;
+}
+
+/* Sub-menú de categorías en móvil */
+.cf-mobile-submenu {
+  background: var(--c-bg);
+  border-top: 1px solid var(--c-border);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.cf-mobile-submenu.is-open {
+  max-height: 600px;
+}
+.cf-mobile-submenu a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--f-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  padding: 0.6rem 1.5rem;
+  transition: color var(--t-fast);
+  border: none;
+  background: none;
+}
+.cf-mobile-submenu a:hover {
+  color: var(--c-crimson);
+}
+.cf-mobile-submenu a i {
+  color: var(--c-crimson);
+  font-size: 0.75rem;
+}
+
+/* Buscador dentro del menú móvil */
+.cf-mobile-search {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--c-border);
+  margin-top: auto;
+  flex-shrink: 0;
+}
+.cf-mobile-search input {
+  width: 100%;
+  background: var(--c-bg);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  color: var(--c-text);
+  font-family: var(--f-ui);
+  font-size: 0.9rem;
+  padding: 0.5rem 0.85rem;
+  outline: none;
+  transition: border-color var(--t-fast);
+}
+.cf-mobile-search input::placeholder {
+  color: var(--c-text-muted);
+}
+.cf-mobile-search input:focus {
+  border-color: var(--c-crimson);
+}
+
+/* ════════════════════════════════════════
+   BREAKPOINTS
+   ════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .cf-nav-links {
+    display: none;
+  }
+  .cf-nav-toggle {
+    display: flex;
+    align-items: center;
+  }
+  .cf-search {
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 540px) {
+  .cf-nav {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+  /* En móvil pequeño, el buscador del navbar se oculta
+     porque hay uno dentro del menú lateral */
+  .cf-search {
+    display: none;
+  }
+  .cf-nav-toggle {
+    margin-left: auto;
+  }
+}

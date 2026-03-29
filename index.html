@@ -199,6 +199,34 @@
 
   <div class="cf-toast" id="cfToast" role="status" aria-live="polite"></div>
 
+
+  <!-- Menú móvil -->
+  <div class="cf-mobile-backdrop" id="mobileBackdrop"></div>
+  <nav class="cf-mobile-menu" id="mobileMenu" aria-label="Menú móvil">
+    <div class="cf-mobile-header">
+      <span class="cf-mobile-logo">CINES<em>FLIX</em></span>
+      <button class="cf-mobile-close" id="mobileClose" aria-label="Cerrar menú">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="cf-mobile-links">
+      <a href="#" id="mobileInicio"><i class="bi bi-house"></i> Inicio</a>
+      <a href="#" id="mobilePeliculas"><i class="bi bi-film"></i> Películas</a>
+      <a href="#" id="mobileSeries"><i class="bi bi-tv"></i> Series</a>
+      <hr class="cf-mobile-divider" />
+      <button id="mobileCatBtn">
+        <span><i class="bi bi-grid"></i> Categorías</span>
+        <i class="bi bi-chevron-down" id="mobileCatArrow"></i>
+      </button>
+      <div class="cf-mobile-submenu" id="mobileSubmenu">
+        <!-- Se puebla automáticamente desde main.js -->
+      </div>
+    </div>
+    <div class="cf-mobile-search">
+      <input type="search" id="mobileSearchInput" placeholder="Buscar películas, series…" autocomplete="off" />
+    </div>
+  </nav>
+
   <script type="module" src="assets/js/main.js"></script>
 
 </body>
